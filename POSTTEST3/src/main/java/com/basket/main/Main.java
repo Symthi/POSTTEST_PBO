@@ -2,15 +2,14 @@ package com.basket.main;
 
 import com.basket.model.Atlet;
 import com.basket.model.Tim;
-import com.basket.model.Pelatih;   // tambahan
-import com.basket.model.Official;  // tambahan
+import com.basket.model.Pelatih;
+import com.basket.model.Official;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
     static ArrayList<Tim> daftarTim = new ArrayList<>();
     static ArrayList<Atlet> daftarAtlet = new ArrayList<>();
-    // TAMBAHAN: untuk subclass Pelatih dan Official
     static ArrayList<Pelatih> daftarPelatih = new ArrayList<>();
     static ArrayList<Official> daftarOfficial = new ArrayList<>();
     static Scanner sc = new Scanner(System.in);
@@ -24,7 +23,7 @@ public class Main {
             System.out.println("1. Kelola Atlet");
             System.out.println("2. Kelola Tim");
             System.out.println("3. Keluar");
-            System.out.println("4. Lihat Semua Person (Demo Inheritance)"); // TAMBAHAN menu
+            System.out.println("4. Lihat Semua Person (Demo Inheritance)");
             System.out.print("Pilih menu: ");
             pilihan = sc.nextInt();
             sc.nextLine();
@@ -38,7 +37,7 @@ public class Main {
                 case 3:
                     System.out.println("Terima kasih!");
                     break;
-                case 4:  // TAMBAHAN
+                case 4:
                     lihatSemuaPerson();
                     break;
                 default:
@@ -57,7 +56,6 @@ public class Main {
         daftarAtlet.add(new Atlet("Michael Jordan", 23, "Shooting Guard", daftarTim.get(2), 30.1));
         daftarAtlet.add(new Atlet("Jayson Tatum", 0, "Small Forward", daftarTim.get(3), 26.9));
 
-        // TAMBAHAN: inisialisasi data Pelatih dan Official
         daftarPelatih.add(new Pelatih("Phil Jackson", "Offense", 20));
         daftarPelatih.add(new Pelatih("Gregg Popovich", "Defense", 24));
         daftarPelatih.add(new Pelatih("Erik Spoelstra", "Fitness", 15));
@@ -67,7 +65,6 @@ public class Main {
         daftarOfficial.add(new Official("Marc Davis", "Scorer"));
     }
 
-    // TAMBAHAN: method untuk menampilkan semua subclass Person (polimorfisme)
     static void lihatSemuaPerson() {
         System.out.println("\n=== DEMO INHERITANCE (Semua Person) ===");
         System.out.println("--- Atlet ---");
@@ -97,7 +94,6 @@ public class Main {
         System.out.println("\nKesimpulan: Person adalah superclass, sedangkan Atlet, Pelatih, dan Official adalah subclass (Hierarchical Inheritance).");
     }
 
-    // ========== KODE ASLI DI BAWAH INI TIDAK DIUBAH ==========
     static void menuAtlet() {
         int pilih;
         do {
